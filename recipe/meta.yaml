@@ -1,13 +1,13 @@
 {% set name = "wheel-inspect" %}
-{% set version = "1.7.1" %}
+{% set version = "1.7.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wheel-inspect-{{ version }}.tar.gz
-  sha256: 469df948ea059ad0cd33cf5f033c554a8b4c20641745701f402e71a7694ec828
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 7df5a0223c39ba065a1eef6efa4ea575b825dad7f3399ee02aaaa888f07ca5e1
 
 build:
   noarch: python
