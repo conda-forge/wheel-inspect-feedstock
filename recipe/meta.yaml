@@ -1,13 +1,13 @@
 {% set name = "wheel-inspect" %}
-{% set version = "1.7.1" %}
+{% set version = "1.7.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/wheel-inspect-{{ version }}.tar.gz
-  sha256: 469df948ea059ad0cd33cf5f033c554a8b4c20641745701f402e71a7694ec828
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 7df5a0223c39ba065a1eef6efa4ea575b825dad7f3399ee02aaaa888f07ca5e1
 
 build:
   noarch: python
@@ -19,13 +19,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - hatchling
+    - python {{ python_min }}
   run:
+    - python >={{ python_min }}
     - attrs >=18.1
-    - entry-points-txt >=0.1.0
+    - entry-points-txt >=0.2
     - headerparser >=0.4.0
     - packaging >=17.1
-    - python >=3.6
     - readme_renderer >=24.0
     - wheel-filename >=1.1
 
@@ -36,9 +37,11 @@ test:
     - test/data/wheels/setuptools-36.0.1-py2.py3-none-any.whl
   commands:
     - wheel2json test/data/wheels/setuptools-36.0.1-py2.py3-none-any.whl
+  requires:
+    - python {{ python_min }}
 
 about:
-  home: https://github.com/jwodder/wheel-inspect
+  home: https://github.com/wheelodex/wheel-inspect
   summary: Extract information from wheels
   license: MIT
   license_file: LICENSE
