@@ -3,7 +3,7 @@ About wheel-inspect-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/wheel-inspect-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/jwodder/wheel-inspect
+Home: https://github.com/wheelodex/wheel-inspect
 
 Package license: MIT
 
