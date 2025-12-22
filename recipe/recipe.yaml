@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: wheel-inspect
-  version: 1.7.2
+  version: "1.8.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 7df5a0223c39ba065a1eef6efa4ea575b825dad7f3399ee02aaaa888f07ca5e1
+  sha256: e532ae7996fe1a44f45a40b88cff985c5346f9f392771dab2aca2d53c3dc2417
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
